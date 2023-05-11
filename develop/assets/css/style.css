@@ -1,48 +1,64 @@
-
+:root {
+    --outer-space: #292929;
+    --silver-chalice: #a4a4a4;
+}
 
 html {
     font-size: 62.5%;
 }
 
+.text {
+    color: var(--silver-chalice);
+}
+
+
 /* adding image to header */
 .header {
     height: 20rem;
-    background-color: rgba(20, 20, 20, .5);
-    background-blend-mode: multiply;
+    background-color: var(--outer-space);
     background-image: url("../images/anastasiia-chepinska-ONAAeKbf96U-unsplash.jpg");
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 /* styling navbar */
 .navbar {
+    margin-top: 5rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     list-style-type: none;
     text-decoration: none;
-    text-align: right;
-
+    text-align: end;
+    padding: 0;
 }
 
-.navbar ul li,
-.navbar ul li a {
+.navbar ul {
+    display: flex
+}
+
+.navbar li {
+    margin-right: 2rem;
+}
+
+.navbar a {
     text-decoration: none;
-    display: inline;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
 }
 
-.navbar ul li a::after {
-    border-right: .5rem solid black;
+.navbar a:hover {
+    border-bottom: 2px solid white;
 }
 
 /* styling body */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-    /* set body font size to 1.75rem, which is 1.75x more than the font-size of 10px, making it 17.5px  */
+        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 1.75rem;
     line-height: 1.5;
     color: black;
@@ -51,7 +67,7 @@ body {
 
 /* setting font-size for each h1-h6 */
 h1 {
-  font-size: 4rem;  
+    font-size: 4rem;
 }
 
 h2 {
@@ -74,25 +90,126 @@ h6 {
     font-size: 1.5rem;
 }
 
-/* need to style header background */
+/* setting container class to flex */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+}
+
+/* style profile image */
+.profile-img {
+    width: 100%;
+    max-width: 30rem;
+    border-radius: 50%;
+}
+
+/* styling the form */
+.contact-form {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--silver-chalice);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 1px solid var(--silver-chalice);
+    font-size: 1.6rem;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 10rem;
+}
+
+.contact-form button {
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-color: var(--outer-space);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: var(--silver-chalice);
+}
 
 
-/* need to style images */
+
+#my-work img {
+    width: 45rem;
+    height: 40rem;
+    margin-bottom: 2rem;
+}
 
 
-/* need to style the form */
-
-
-/* need to style buttons */
-
-
-/* need to make reactive design with media query */
-/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
-   
-  }
-  
-  /* media query for larger screens */
-  @media screen and (min-width: 992px) {
-    
-  }
+
+    /* display profile image and sections side by side */
+    .profile-img {
+        width: 40%;
+        margin-right: 5%;
+    }
+
+    #about-me,
+    #my-work,
+    #contact-me {
+        width: 55%;
+    }
+
+    /* adjust font sizes for larger screens */
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 3.5rem;
+    }
+
+    /* adjust margin-top for navbar */
+    .navbar ul {
+        margin-top: 10rem;
+    }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+
+    /* display profile image on left side of screen */
+    .profile-img {
+        width: 30%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    #about-me,
+    #my-work,
+    #contact-me {
+        width: 60%;
+    }
+
+    /* adjust margin-top for navbar */
+    .navbar ul {
+        margin-top: 5rem;
+    }
+}
