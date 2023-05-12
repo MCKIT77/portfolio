@@ -1,6 +1,7 @@
 :root {
     --outer-space: #292929;
     --silver-chalice: #a4a4a4;
+    --white-smoke: whitesmoke;
 }
 
 html {
@@ -52,7 +53,7 @@ html {
 }
 
 .navbar a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid var(--white-smoke);
 }
 
 /* styling body */
@@ -140,7 +141,7 @@ h6 {
     padding: 1rem 2rem;
     border-radius: 5px;
     background-color: var(--outer-space);
-    color: white;
+    color: var(--white-smoke);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -156,6 +157,10 @@ h6 {
     width: 45rem;
     height: 40rem;
     margin-bottom: 2rem;
+}
+
+#my-work img:hover {
+    outline: 5px solid var(--silver-chalice);
 }
 
 
